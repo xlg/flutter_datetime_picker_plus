@@ -1,6 +1,8 @@
-# Flutter Datetime Picker
+# Flutter Datetime Picker Plus
 
-[(Pub) flutter_datetime_picker](https://pub.dev/packages/flutter_datetime_picker)
+Forked from [(Pub) flutter_datetime_picker](https://pub.dev/packages/flutter_datetime_picker) as it had issues with dart 3.0
+
+[(Pub) flutter_datetime_picker_plus](https://pub.dev/packages/flutter_datetime_picker_plus)
 
 A flutter date time picker inspired by [flutter-cupertino-date-picker](https://github.com/wuzhendev/flutter-cupertino-date-picker)
 
