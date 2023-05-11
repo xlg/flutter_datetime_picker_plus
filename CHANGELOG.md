@@ -49,3 +49,4 @@
 ## [1.4.0] - support flutter 1.2.0
 ## [1.5.0] - so much update
 ## [1.5.1] - null safety
+## [2.0.0] - Support flutter 3.10.0 / dart 3.0.0
