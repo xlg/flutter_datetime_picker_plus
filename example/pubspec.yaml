@@ -1,5 +1,6 @@
 name: example
 description: A new Flutter application.
+publish_to: none
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -17,7 +18,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
-  flutter_datetime_picker: 1.5.1
+  flutter_datetime_picker_plus:
+    path: ../
 
 dev_dependencies:
   flutter_test:
