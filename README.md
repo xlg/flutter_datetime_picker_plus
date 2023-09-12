@@ -43,6 +43,7 @@ you can choose date / time / date&time in multiple languages:
 - Turkish(tr)
 - Vietnamese(vi)
 - Khmer(kh)
+- India(hi)
 
 
 and you can also custom your own picker content
