@@ -161,8 +161,10 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   picker.DatePicker.showDateTimePicker(context,
                       showTitleActions: true,
-                      minTime: DateTime(2020, 5, 5, 20, 50),
-                      maxTime: DateTime(2020, 6, 7, 05, 09), onChanged: (date) {
+                      currentTime: DateTime(2024,12,31,23,50),
+                      minTime: DateTime(2024,12,31,23,50),//DateTime(2020, 5, 5, 20, 50)
+                      maxTime: DateTime(2025,1,1,0,20),
+                      onChanged: (date) {
                     print('change $date in time zone ' +
                         date.timeZoneOffset.inHours.toString());
                   }, onConfirm: (date) {

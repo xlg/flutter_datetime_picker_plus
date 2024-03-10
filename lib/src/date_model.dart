@@ -522,6 +522,7 @@ class Time12hPickerModel extends CommonPickerModel {
 class DateTimePickerModel extends CommonPickerModel {
   DateTime? maxTime;
   DateTime? minTime;
+  bool _minMaxSameDay = false;
 
   DateTimePickerModel(
       {DateTime? currentTime,
@@ -571,6 +572,8 @@ class DateTimePickerModel extends CommonPickerModel {
         _currentRightIndex = this.currentTime.minute - this.minTime!.minute;
       }
     }
+
+    _minMaxSameDay = isAtSameDay(minTime, maxTime);
   }
 
   bool isAtSameDay(DateTime? day1, DateTime? day2) {
@@ -631,7 +634,13 @@ class DateTimePickerModel extends CommonPickerModel {
     if (index >= 0 && index < 24) {
       DateTime time = currentTime.add(Duration(days: _currentLeftIndex));
       if (isAtSameDay(minTime, time)) {
-        if (index >= 0 && index < 24 - minTime!.hour) {
+        if (_minMaxSameDay){
+          if (index >= 0 && index <= maxTime!.hour-minTime!.hour) {
+            return digits(minTime!.hour + index, 2);
+          } else {
+            return null;
+          }
+        } else if (index >= 0 && index < 24 - minTime!.hour) {
           return digits(minTime!.hour + index, 2);
         } else {
           return null;
@@ -661,6 +670,12 @@ class DateTimePickerModel extends CommonPickerModel {
         }
       } else if (isAtSameDay(maxTime, time) &&
           _currentMiddleIndex >= maxTime!.hour) {
+        if (index >= 0 && index <= maxTime!.minute) {
+          return digits(index, 2);
+        } else {
+          return null;
+        }
+      } else if (_minMaxSameDay && _currentMiddleIndex == maxTime!.hour - minTime!.hour){ //处理同一天的 最后一小时的分数
         if (index >= 0 && index <= maxTime!.minute) {
           return digits(index, 2);
         } else {
